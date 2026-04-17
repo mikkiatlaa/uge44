@@ -1,0 +1,103 @@
+---
+interface Props {
+  label: string;
+  href?: string;
+  size?: "giant" | "large";
+  variant?: "outline" | "filled" | "dark";
+}
+
+const {
+  label,
+  href = "#",
+  size = "large",
+  variant = "outline",
+} = Astro.props;
+---
+
+<a class:list={["cta-btn", `size-${size}`, `variant-${variant}`]} href={href}>
+  {label}
+</a>
+
+<style>
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 28px;
+    border-radius: 999px;
+    font-family: var(--font-family);
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    border: 2px solid transparent;
+    transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.1s;
+    cursor: pointer;
+  }
+
+  .cta-btn:active {
+    transform: scale(0.97);
+  }
+
+  /* Sizes */
+  .size-giant {
+    height: 52px;
+    font-size: var(--text-btn-giant);
+    line-height: var(--leading-btn-giant);
+  }
+
+  .size-large {
+    height: 44px;
+    font-size: var(--text-btn-large);
+    line-height: var(--leading-btn-large);
+  }
+
+  /* Variants */
+  .variant-outline {
+    background: var(--color-white);
+    border-color: var(--color-orange-500);
+    color: var(--color-black);
+  }
+
+  .variant-outline:hover {
+    background: var(--color-orange-500);
+    color: var(--color-white);
+  }
+
+  .variant-outline:active {
+    background: var(--color-orange-700);
+    border-color: var(--color-orange-700);
+    color: var(--color-white);
+  }
+
+  .variant-filled {
+    background: var(--color-orange-500);
+    border-color: var(--color-orange-500);
+    color: var(--color-white);
+  }
+
+  .variant-filled:hover {
+    background: var(--color-orange-600);
+    border-color: var(--color-orange-600);
+  }
+
+  .variant-filled:active {
+    background: var(--color-orange-700);
+    border-color: var(--color-orange-700);
+  }
+
+  .variant-dark {
+    background: var(--color-black);
+    border-color: var(--color-black);
+    color: var(--color-white);
+  }
+
+  .variant-dark:hover {
+    background: var(--color-orange-500);
+    border-color: var(--color-orange-500);
+  }
+
+  .variant-dark:active {
+    background: var(--color-blue-500);
+    border-color: var(--color-blue-500);
+  }
+</style>

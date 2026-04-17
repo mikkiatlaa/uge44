@@ -1,0 +1,139 @@
+---
+interface SocialLink {
+  label: string;
+  href: string;
+  icon: "facebook" | "instagram";
+}
+
+interface Props {
+  orgName?: string;
+  address?: string[];
+  phone?: string;
+  email?: string;
+  cvr?: string;
+  socialLinks?: SocialLink[];
+}
+
+const {
+  orgName = "Landsforeningen liv & død",
+  address = ["Bispebjerg Torv 16 St. TV", "2400 København NV"],
+  phone = "33 36 49 70",
+  email = "info@livogdoed.dk",
+  cvr = "25441397 (Landsforeningen Liv&Død · Dansk Ligbrændingesforening)",
+  socialLinks = [
+    { label: "FaceBook", href: "https://facebook.com", icon: "facebook" },
+    { label: "Instagram", href: "https://instagram.com", icon: "instagram" },
+  ],
+} = Astro.props;
+---
+
+<footer>
+  <a href="/" class="logo-link" aria-label="UGE 44 Liv og Død">
+    <img src="/LIV_Død_removebg 2.svg" alt="UGE 44 Liv & Død logo" />
+  </a>
+
+  <div class="footer-address">
+    <p class="org-name">{orgName}</p>
+    {address.map((line) => <p>{line}</p>)}
+    <p>{phone}</p>
+    <p>{email}</p>
+    <p class="cvr">CVR: {cvr}</p>
+  </div>
+
+  <div class="footer-social">
+    <p class="social-heading">Find os på sociale medier</p>
+    <ul>
+      {socialLinks.map((link) => (
+        <li>
+          <a href={link.href} target="_blank" rel="noopener noreferrer">
+            {link.icon === "facebook" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            )}
+            {link.icon === "instagram" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+              </svg>
+            )}
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</footer>
+
+<style>
+  footer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: var(--color-blue-light-200);
+    gap: 24px;
+  }
+
+  .logo-link {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .logo-link img {
+    height: 80px;
+    width: auto;
+  }
+
+  .footer-address p {
+    font-size: var(--text-b3);
+    line-height: var(--leading-b3);
+    color: var(--color-black);
+    margin-bottom: 4px;
+  }
+
+  .org-name {
+    font-size: var(--text-b3) !important;
+    font-weight: 700 !important;
+    margin-bottom: 8px !important;
+  }
+
+  .cvr {
+    font-size: 11px !important;
+    color: #444 !important;
+    margin-top: 8px !important;
+  }
+
+  .footer-social .social-heading {
+    font-size: var(--text-b3);
+    line-height: var(--leading-b3);
+    font-weight: 700;
+    margin: 0 0 12px;
+  }
+
+  .footer-social ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-social a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--color-black);
+    font-size: var(--text-b3);
+    line-height: var(--leading-b3);
+    transition: color 0.2s;
+  }
+
+  .footer-social a:hover {
+    color: var(--color-orange-500);
+  }
+</style>

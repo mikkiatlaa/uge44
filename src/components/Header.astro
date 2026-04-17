@@ -1,0 +1,74 @@
+---
+interface NavItem {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  navItems?: NavItem[];
+}
+
+const {
+  navItems = [
+    { label: "Forside", href: "/" },
+    { label: "UGE 44", href: "/uge44" },
+    { label: "Kalender", href: "/kalender" },
+    { label: "Nyhedsbrev", href: "/nyhedsbrev" },
+  ],
+} = Astro.props;
+---
+
+<header>
+  <a href="/" class="logo-link" aria-label="UGE 44 Liv og Død">
+    <img src="/LIV_Død_removebg 2.svg" alt="UGE 44 Liv & Død logo" />
+  </a>
+
+  <nav>
+    <ul>
+      {navItems.map((item) => (
+        <li><a href={item.href}>{item.label}</a></li>
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<style>
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 40px;
+    background-color: var(--color-beige-100);
+  }
+
+  .logo-link {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .logo-link img {
+    height: 60px;
+    width: auto;
+  }
+
+  nav ul {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: var(--color-black);
+    font-size: var(--text-b2);
+    line-height: var(--leading-b2);
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  nav a:hover {
+    color: var(--color-orange-500);
+  }
+</style>
