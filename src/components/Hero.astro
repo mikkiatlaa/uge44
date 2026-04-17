@@ -1,0 +1,49 @@
+---
+interface Props {
+  tagline?: string;
+  title?: string;
+  backgroundImage?: string;
+}
+
+const {
+  tagline = "UGE 44 FOKUS PÅ DØDEN",
+  title = "Forside",
+  backgroundImage = "/LivDoed-plakat-Final 1.png",
+} = Astro.props;
+---
+
+<section class="hero" style={`background-image: url('${backgroundImage}')`}>
+  <h1 class="tagline">{tagline}</h1>
+  <h1 class="title">{title}</h1>
+</section>
+
+<style>
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 48px 40px;
+    min-height: 340px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .tagline {
+    color: var(--color-orange-500);
+    font-size: var(--text-h1);
+    line-height: var(--leading-h1);
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0;
+    max-width: 240px;
+  }
+
+  .title {
+    color: var(--color-white);
+    font-size: var(--text-h1);
+    line-height: var(--leading-h1);
+    font-weight: 900;
+    margin: 0;
+  }
+</style>
