@@ -8,7 +8,20 @@
     "preview": "astro preview",
     "astro": "astro"
   },
-  "dependencies": {
-    "astro": "^5.17.1"
-  }
+  "description": "```sh npm create astro@latest -- --template basics ```",
+  "main": "index.js",
+  "devDependencies": {
+    "astro": "^6.1.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikkiatlaa/uge44.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikkiatlaa/uge44/issues"
+  },
+  "homepage": "https://github.com/mikkiatlaa/uge44#readme"
 }
