@@ -1,4 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rammetto+One&family=Dawning+Of+A+New+Day&display=swap');
+
+@font-face {
+  font-family: 'Kollektif';
+  src: url('/fonts/Kollektif.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   /* Orange */
@@ -65,18 +73,21 @@
   --color-black: #1A1A1A;
   --color-white: #FFFFFF;
 
-  /* Typography */
-  --font-family: 'Outfit', sans-serif;
+  /* Fonts */
+  --font-heading:    'Rammetto One', serif;
+  --font-cursive:    'Dawning Of A New Day', cursive;
+  --font-body:       'Kollektif', sans-serif;
 
+  /* Type scale */
   --text-h1: 48px;
   --text-h2: 40px;
-  --text-h3: 32px;
+  --text-h3: 20px;
   --text-h4: 26px;
   --text-h5: 24px;
 
   --leading-h1: 58px;
   --leading-h2: 48px;
-  --leading-h3: 38px;
+  --leading-h3: 28px;
   --leading-h4: 34px;
   --leading-h5: 28px;
 
@@ -85,7 +96,7 @@
   --text-b3: 14px;
   --text-b4: 14px;
 
-  --leading-b1: 24px;
+  --leading-b1: 26px;
   --leading-b2: 24px;
   --leading-b3: 20px;
   --leading-b4: 20px;
@@ -104,19 +115,28 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  font-family: var(--font-family);
+  font-family: var(--font-body);
   color: var(--color-black);
 }
 
-h1 { font-size: var(--text-h1); line-height: var(--leading-h1); font-weight: 400; margin: 0; }
-h2 { font-size: var(--text-h2); line-height: var(--leading-h2); font-weight: 400; margin: 0; }
-h3 { font-size: var(--text-h3); line-height: var(--leading-h3); font-weight: 700; margin: 0; }
-h4 { font-size: var(--text-h4); line-height: var(--leading-h4); font-weight: 400; margin: 0; }
-h5 { font-size: var(--text-h5); line-height: var(--leading-h5); font-weight: 400; margin: 0; }
+/* H1 & H3 — Rammetto One */
+h1 { font-family: var(--font-heading); font-size: var(--text-h1); line-height: var(--leading-h1); font-weight: 400; margin: 0; }
+h3 { font-family: var(--font-heading); font-size: var(--text-h3); line-height: var(--leading-h3); font-weight: 400; margin: 0; }
+
+/* H2 — Kollektif Regular */
+h2 { font-family: var(--font-body); font-size: var(--text-h2); line-height: var(--leading-h2); font-weight: 400; margin: 0; }
+
+/* H4 & H5 — Kollektif */
+h4 { font-family: var(--font-body); font-size: var(--text-h4); line-height: var(--leading-h4); font-weight: 400; margin: 0; }
+h5 { font-family: var(--font-body); font-size: var(--text-h5); line-height: var(--leading-h5); font-weight: 400; margin: 0; }
+
+/* Cursive utility class — Dawning Of A New Day */
+.font-cursive { font-family: var(--font-cursive); font-size: var(--text-h2); line-height: var(--leading-h2); }
 
 p {
-  font-size: var(--text-b2);
-  line-height: var(--leading-b2);
+  font-family: var(--font-body);
+  font-size: var(--text-b1);
+  line-height: var(--leading-b1);
   font-weight: 400;
   margin: 0;
 }
