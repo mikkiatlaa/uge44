@@ -27,3 +27,15 @@ main {
   margin: 18px auto;
   line-height: 1.8;
 }
+
+.monogram {
+  width: 100%;
+  overflow: hidden;
+}
+
+.monogram img {
+  width: 100%;
+  height: 160px;       /* samme højde som før */
+  object-fit: cover;   /* beskærer billedet pænt */
+  display: block;
+}
