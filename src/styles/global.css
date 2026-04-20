@@ -73,6 +73,9 @@
   --color-black: #1A1A1A;
   --color-white: #FFFFFF;
 
+  /* Aliases */
+  --bright-orange: #FD7523;
+
   /* Fonts */
   --font-heading:    'Rammetto One', serif;
   --font-cursive:    'Dawning Of A New Day', cursive;
@@ -123,8 +126,18 @@ html, body {
 h1 { font-family: var(--font-heading); font-size: var(--text-h1); line-height: var(--leading-h1); font-weight: 400; margin: 0; }
 h3 { font-family: var(--font-heading); font-size: var(--text-h3); line-height: var(--leading-h3); font-weight: 400; margin: 0; }
 
-/* H2 — Kollektif Regular */
-h2 { font-family: var(--font-body); font-size: var(--text-h2); line-height: var(--leading-h2); font-weight: 400; margin: 0; }
+/* H2 — Rammetto One, orange */
+h2 {
+  color: var(--bright-orange, #FD7523);
+  text-align: center;
+  font-family: 'Rammetto One';
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 121.2%;
+  text-transform: capitalize;
+  margin: 0;
+}
 
 /* H4 & H5 — Kollektif */
 h4 { font-family: var(--font-body); font-size: var(--text-h4); line-height: var(--leading-h4); font-weight: 400; margin: 0; }
