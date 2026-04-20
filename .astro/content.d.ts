@@ -15,13 +15,6 @@ declare module 'astro:content' {
 			[key: string]: unknown;
 		};
 	}
-
-	type Flatten<T> = T extends { [K: string]: infer U } ? U : never;
-
-	export type CollectionKey = keyof DataEntryMap;
-	export type CollectionEntry<C extends CollectionKey> = Flatten<DataEntryMap[C]>;
-
-	type AllValuesOf<T> = T extends any ? T[keyof T] : never;
 }
 
 declare module 'astro:content' {
@@ -45,7 +38,6 @@ declare module 'astro:content' {
 		collection: C;
 		id: E;
 	};
-
 	export type ReferenceContentEntry<
 		C extends keyof ContentEntryMap,
 		E extends ValidContentEntrySlug<C> | (string & {}) = string,
@@ -58,11 +50,6 @@ declare module 'astro:content' {
 		id: string;
 	};
 
-	export function getCollection<C extends keyof DataEntryMap, E extends CollectionEntry<C>>(
-		collection: C,
-		filter?: (entry: CollectionEntry<C>) => entry is E,
-	): Promise<E[]>;
-	export function getCollection<C extends keyof DataEntryMap>(
 	/** @deprecated Use `getEntry` instead. */
 	export function getEntryBySlug<
 		C extends keyof ContentEntryMap,
@@ -146,43 +133,6 @@ declare module 'astro:content' {
 		entries: ReferenceDataEntry<C, keyof DataEntryMap[C]>[],
 	): Promise<CollectionEntry<C>[]>;
 
-	export function render<C extends keyof DataEntryMap>(
-		entry: DataEntryMap[C][string],
-	): Promise<RenderResult>;
-
-	export function reference<
-		C extends
-			| keyof DataEntryMap
-			// Allow generic `string` to avoid excessive type errors in the config
-			// if `dev` is not running to update as you edit.
-			// Invalid collection names will be caught at build time.
-			| (string & {}),
-	>(
-		collection: C,
-	): import('astro/zod').ZodPipe<
-		import('astro/zod').ZodString,
-		import('astro/zod').ZodTransform<
-			C extends keyof DataEntryMap
-				? {
-						collection: C;
-						id: string;
-					}
-				: never,
-			string
-		>
-	>;
-
-	type ReturnTypeOrOriginal<T> = T extends (...args: any[]) => infer R ? R : T;
-	type InferEntrySchema<C extends keyof DataEntryMap> = import('astro/zod').infer<
-		ReturnTypeOrOriginal<Required<ContentConfig['collections'][C]>['schema']>
-	>;
-	type ExtractLoaderConfig<T> = T extends { loader: infer L } ? L : never;
-	type InferLoaderSchema<
-		C extends keyof DataEntryMap,
-		L = ExtractLoaderConfig<ContentConfig['collections'][C]>,
-	> = L extends { schema: import('astro/zod').ZodSchema }
-		? import('astro/zod').infer<L['schema']>
-		: any;
 	export function render<C extends keyof AnyEntryMap>(
 		entry: AnyEntryMap[C][string],
 	): Promise<RenderResult>;
@@ -244,7 +194,6 @@ declare module 'astro:content' {
 		LiveContentConfig['collections'][C]['loader']
 	>;
 
-	export type ContentConfig = typeof import("../src/content.config.mjs");
 	export type ContentConfig = typeof import("./../src/content.config.mjs");
 	export type LiveContentConfig = never;
 }
