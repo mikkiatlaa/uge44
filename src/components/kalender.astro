@@ -1,0 +1,102 @@
+---
+import EventCard from "./EventCard.astro";
+import { supabase } from "../lib/supabase";
+
+const { data: events, error } = await supabase
+  .from("uge44-data")
+  .select("*")
+  .order("date", { ascending: true });
+
+const dayOrder = ["Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag", "Lørdag", "Søndag"];
+const availableDays = dayOrder.filter((day) =>
+  events?.some((e) => e["day-of-week"] === day)
+);
+---
+
+{error && <p class="error">Kunne ikke hente events: {error.message}</p>}
+
+<div class="filter-bar">
+  <button class="filter-btn active" data-day="alle">Alle</button>
+  {availableDays.map((day) => (
+    <button class="filter-btn" data-day={day}>{day}</button>
+  ))}
+</div>
+
+<div class="event-grid">
+  {events?.map((event) => (
+    <div class="card-wrapper" data-day={event["day-of-week"]}>
+      <EventCard
+        location={event.location}
+        time={event.time}
+        description={event.description}
+        date={event.date}
+        dayOfWeek={event["day-of-week"]}
+      />
+    </div>
+  ))}
+</div>
+
+<style>
+  .filter-bar {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 32px 40px 0;
+  }
+
+  .filter-btn {
+    padding: 8px 20px;
+    border-radius: 999px;
+    border: 2px solid var(--bright-orange);
+    background: transparent;
+    color: var(--color-black);
+    font-family: var(--font-body);
+    font-size: var(--text-b2);
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .filter-btn:hover,
+  .filter-btn.active {
+    background: var(--bright-orange);
+    color: var(--color-white);
+  }
+
+  .event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px;
+    padding: 24px 40px 40px;
+  }
+
+  .card-wrapper.hidden {
+    display: none;
+  }
+
+  .error {
+    color: red;
+    padding: 24px 40px;
+  }
+</style>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>(".filter-btn");
+  const cards = document.querySelectorAll<HTMLElement>(".card-wrapper");
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const selected = btn.dataset.day;
+
+      buttons.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      cards.forEach((card) => {
+        if (selected === "alle" || card.dataset.day === selected) {
+          card.classList.remove("hidden");
+        } else {
+          card.classList.add("hidden");
+        }
+      });
+    });
+  });
+</script>
