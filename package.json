@@ -2,16 +2,18 @@
   "name": "ycdk",
   "type": "module",
   "version": "0.0.1",
+  "description": "```sh npm create astro@latest -- --template basics ```",
+  "main": "index.js",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
-  "description": "```sh npm create astro@latest -- --template basics ```",
-  "main": "index.js",
-  "devDependencies": {
-    "astro": "^6.1.8"
+  "dependencies": {
+    "@supabase/ssr": "^0.10.2",
+    "@supabase/supabase-js": "^2.104.0",
+    "astro": "^5.17.1"
   },
   "repository": {
     "type": "git",

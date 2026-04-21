@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Rammetto+One&family=Dawning+Of+A+New+Day&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rammetto+One&family=Dawning+Of+A+New+Day&display=swap");
 
 @font-face {
-  font-family: 'Kollektif';
-  src: url('/fonts/Kollektif.ttf') format('truetype');
+  font-family: "Kollektif";
+  src: url("/fonts/Kollektif.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -10,73 +10,76 @@
 
 :root {
   /* Orange */
-  --color-orange-900: #7A2800;
-  --color-orange-800: #A83500;
-  --color-orange-700: #D04400;
-  --color-orange-600: #F05500;
-  --color-orange-500: #FD7523;
-  --color-orange-400: #FE9454;
-  --color-orange-300: #FEB482;
-  --color-orange-200: #FED3B5;
-  --color-orange-100: #FEEADE;
-  --color-orange-50:  #FFF5EE;
+  --color-orange-900: #7a2800;
+  --color-orange-800: #a83500;
+  --color-orange-700: #d04400;
+  --color-orange-600: #f05500;
+  --color-orange-500: #fd7523;
+  --color-orange-400: #fe9454;
+  --color-orange-300: #feb482;
+  --color-orange-200: #fed3b5;
+  --color-orange-100: #feeade;
+  --color-orange-50: #fff5ee;
 
   /* Beige */
-  --color-beige-900: #4A3825;
-  --color-beige-800: #6B5438;
-  --color-beige-700: #8C7050;
-  --color-beige-600: #A88D6A;
-  --color-beige-500: #C4AA88;
-  --color-beige-400: #D4BFA4;
-  --color-beige-300: #E0D2BF;
-  --color-beige-200: #EDE4D8;
-  --color-beige-100: #F5EFE6;
-  --color-beige-50:  #FAF7F3;
+  --color-beige-900: #4a3825;
+  --color-beige-800: #6b5438;
+  --color-beige-700: #8c7050;
+  --color-beige-600: #a88d6a;
+  --color-beige-500: #c4aa88;
+  --color-beige-400: #d4bfa4;
+  --color-beige-300: #e0d2bf;
+  --color-beige-200: #ede4d8;
+  --color-beige-100: #f5efe6;
+  --color-beige-50: #faf7f3;
 
   /* Light blue */
-  --color-blue-light-900: #3A4E6A;
-  --color-blue-light-800: #4E6485;
-  --color-blue-light-700: #637BA0;
-  --color-blue-light-600: #8098B8;
-  --color-blue-light-500: #9DB5CC;
-  --color-blue-light-400: #B5C8D8;
-  --color-blue-light-300: #C8D7E3;
-  --color-blue-light-200: #CDD3E0;
-  --color-blue-light-100: #E0E8F0;
-  --color-blue-light-50:  #F0F4F8;
+  --color-blue-light-900: #3a4e6a;
+  --color-blue-light-800: #4e6485;
+  --color-blue-light-700: #637ba0;
+  --color-blue-light-600: #8098b8;
+  --color-blue-light-500: #9db5cc;
+  --color-blue-light-400: #b5c8d8;
+  --color-blue-light-300: #c8d7e3;
+  --color-blue-light-200: #cdd3e0;
+  --color-blue-light-100: #e0e8f0;
+  --color-blue-light-50: #f0f4f8;
 
   /* Blue */
-  --color-blue-900: #0D1A2E;
+  --color-blue-900: #0d1a2e;
   --color-blue-800: #152845;
-  --color-blue-700: #1E3A60;
-  --color-blue-600: #2A4F7C;
-  --color-blue-500: #3A6698;
-  --color-blue-400: #6088B4;
-  --color-blue-300: #90AECE;
-  --color-blue-200: #BAD0E4;
-  --color-blue-100: #DDEAF4;
-  --color-blue-50:  #EEF4FA;
+  --color-blue-700: #1e3a60;
+  --color-blue-600: #2a4f7c;
+  --color-blue-500: #3a6698;
+  --color-blue-400: #6088b4;
+  --color-blue-300: #90aece;
+  --color-blue-200: #bad0e4;
+  --color-blue-100: #ddeaf4;
+  --color-blue-50: #eef4fa;
 
   /* Green */
-  --color-green-900: #2A2E00;
+  --color-green-900: #2a2e00;
   --color-green-800: #424700;
-  --color-green-700: #5C6200;
+  --color-green-700: #5c6200;
   --color-green-600: #788000;
-  --color-green-500: #969E00;
-  --color-green-400: #B4BB40;
-  --color-green-300: #CCCE80;
-  --color-green-200: #E0E2B0;
-  --color-green-100: #EEEFC8;
-  --color-green-50:  #F7F8E8;
+  --color-green-500: #969e00;
+  --color-green-400: #b4bb40;
+  --color-green-300: #ccce80;
+  --color-green-200: #e0e2b0;
+  --color-green-100: #eeefc8;
+  --color-green-50: #f7f8e8;
 
   /* Black / White */
-  --color-black: #1A1A1A;
-  --color-white: #FFFFFF;
+  --color-black: #1a1a1a;
+  --color-white: #ffffff;
+
+  /* Aliases */
+  --bright-orange: #fd7523;
 
   /* Fonts */
-  --font-heading:    'Rammetto One', serif;
-  --font-cursive:    'Dawning Of A New Day', cursive;
-  --font-body:       'Kollektif', sans-serif;
+  --font-heading: "Rammetto One", serif;
+  --font-cursive: "Dawning Of A New Day", cursive;
+  --font-body: "Kollektif", sans-serif;
 
   /* Type scale */
   --text-h1: 48px;
@@ -107,31 +110,73 @@
   --leading-btn-large: 20px;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   width: 100%;
   font-family: var(--font-body);
   color: var(--color-black);
+  background-color: #FEF5EE;
 }
 
 /* H1 & H3 — Rammetto One */
-h1 { font-family: var(--font-heading); font-size: var(--text-h1); line-height: var(--leading-h1); font-weight: 400; margin: 0; }
-h3 { font-family: var(--font-heading); font-size: var(--text-h3); line-height: var(--leading-h3); font-weight: 400; margin: 0; }
+h1 {
+  font-family: var(--font-heading);
+  font-size: var(--text-h1);
+  line-height: var(--leading-h1);
+  font-weight: 400;
+  margin: 0;
+}
+h3 {
+  font-family: var(--font-heading);
+  font-size: var(--text-h3);
+  line-height: var(--leading-h3);
+  font-weight: 400;
+  margin: 0;
+}
 
-/* H2 — Kollektif Regular */
-h2 { font-family: var(--font-body); font-size: var(--text-h2); line-height: var(--leading-h2); font-weight: 400; margin: 0; }
+/* H2 — Rammetto One, orange */
+h2 {
+  color: var(--bright-orange, #fd7523);
+  text-align: center;
+  font-family: "Rammetto One";
+  font-size: var(--text-h2);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 121.2%;
+  text-transform: capitalize;
+  margin: 0;
+}
 
 /* H4 & H5 — Kollektif */
-h4 { font-family: var(--font-body); font-size: var(--text-h4); line-height: var(--leading-h4); font-weight: 400; margin: 0; }
-h5 { font-family: var(--font-body); font-size: var(--text-h5); line-height: var(--leading-h5); font-weight: 400; margin: 0; }
+h4 {
+  font-family: var(--font-heading);
+  font-size: var(--text-h4);
+  line-height: var(--leading-h4);
+  font-weight: 400;
+  margin: 0;
+}
+h5 {
+  font-family: var(--font-heading);
+  font-size: var(--text-h5);
+  line-height: var(--leading-h5);
+  font-weight: 400;
+  margin: 0;
+}
 
 /* Cursive utility class — Dawning Of A New Day */
-.font-cursive { font-family: var(--font-cursive); font-size: var(--text-h2); line-height: var(--leading-h2); }
+.font-cursive {
+  font-family: var(--font-cursive);
+  font-size: var(--text-h2);
+  line-height: var(--leading-h2);
+}
 
 p {
   font-family: var(--font-body);
