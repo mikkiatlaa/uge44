@@ -1,0 +1,75 @@
+body {
+  background: var(--light, #f9f9f9);
+}
+h1 {
+  font-size: 36px;
+  color: var(--primary, #fd7523);
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 18px;
+  color: var(--black, #000);
+  margin-bottom: 30px;
+}
+
+.nyhedsbrev-section {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.nyhedsbrev-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.nyhedsbrev-signup {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  width: 60%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.nyhedsbrev-signup h2 {
+  margin-top: 0;
+  color: #fd7523;
+}
+
+.nyhedsbrev-signup label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.nyhedsbrev-signup input[type="text"],
+.nyhedsbrev-signup input[type="email"],
+.nyhedsbrev-signup input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.checkbox-wrapper {
+  margin-top: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+  margin-top: 3px;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 800px) {
+  .nyhedsbrev-signup {
+    width: 100%;
+  }
+}

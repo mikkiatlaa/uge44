@@ -3,10 +3,43 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import Footer from '../components/Footer.astro';
+import '../styles/nyhedsbrev.css';
+import CtaButton from '../components/CtaButton.astro';
 ---
 
 <Layout title="Nyhedsbrev – Liv & Død">
   <Header />
   <Hero tagline="UGE 44 FOKUS PÅ DØDEN" title="Nyhedsbrev" />
+  <section class="nyhedsbrev-section">
+  <h1>Vores Nyhedsbrev</h1>
+  <p>Tilmeld dig vores nyhedsbrev og modtag nyheder og information om uge 44.</p>
+
+  <div class="nyhedsbrev-wrapper">
+
+    <form class="nyhedsbrev-signup">
+      <h2>Sign Up</h2>
+
+      <label for="Fornavn">Fornavn</label>
+      <input type="text" id="Fornavn" name="Fornavn" required>
+
+      <label for="Efternavn">Efternavn</label>
+      <input type="text" id="Efternavn" name="Efternavn" required>
+
+      <label for="Email">Email</label>
+      <input type="email" id="Email" name="Email" required> 
+
+      <label for="Telefonnummer">Telefonnummer</label>
+      <input type="tel" id="Telefonnummer" name="Telefonnummer" required>
+
+      <div class="checkbox-wrapper">
+        <input type="checkbox" id="accept">
+        <label for="accept">Jeg accepterer at modtage nyhedsbreve og information om kampagner fra Uge 44.</label>
+      </div>
+
+     <CtaButton label="Tilmeld" />
+    </form>
+  </div>
+  </section>
   <Footer />
 </Layout>
+
