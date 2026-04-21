@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  width: 100%;
+}
+
+/* Top sektion */
+.content h1 {
+  color: #f26522;
+  font-size: 48px;
+  margin-bottom: 25px;
+}
+
+/* Bund sektion */
+.content {
+  background-color: #e9e1d9;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.content p {
+  max-width: 750px;
+  margin: 18px auto;
+  line-height: 1.8;
+}
+
+.monogram {
+  width: 100%;
+  overflow: hidden;
+}
+
+.monogram img {
+  width: 100%;
+  height: 160px;       /* samme højde som før */
+  object-fit: cover;   /* beskærer billedet pænt */
+  display: block;
+}

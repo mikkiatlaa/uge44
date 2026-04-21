@@ -1,0 +1,101 @@
+.index1_1-1 {
+  display: flex;
+  align-items: center;
+}
+
+.index1_box_1 {
+  width: 756px;
+  height: 500px;
+  background: #7ba1dc;
+  text-align: center;
+}
+
+.index1_box_1 h1 {
+  margin-top: 100px;
+  font-size: 48px;
+  color: var(--white, #fff);
+}
+
+.index1_box_1 p {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  width: 442px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--white, #fff);
+}
+
+.index1_box_2 {
+  width: 756px;
+  height: 500px;
+  background: #d1c362;
+  text-align: center;
+}
+
+.index1_box_2 h1 {
+  margin-top: 100px;
+  font-size: 48px;
+  color: var(--white, #fff);
+}
+
+.index1_box_2 p {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  width: 442px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--white, #fff);
+}
+
+.index2_1-1 {
+  display: flex;
+  align-items: center;
+}
+
+/* second box */
+
+.index2_1-1 {
+  display: flex;
+  align-items: center;
+}
+
+.index2_box_1,
+.index2_box_2 {
+  background: var(--beige, #fef5ee);
+  width: 756px;
+  height: 500px;
+  text-align: center;
+}
+
+.index2_box_1 h1 {
+  margin-top: 100px;
+  font-size: 48px;
+  text-align: center;
+  color: var(--bright-orange, #fd7523);
+}
+.index2_box_1 p {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  width: 363px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.index2_box_2 h1 {
+  margin-top: 100px;
+  font-size: 48px;
+  text-align: center;
+  color: var(--bright-orange, #fd7523);
+}
+
+.monogram {
+  width: 100%;
+  overflow: hidden;
+}
+
+.monogram img {
+  width: 100%;
+  height: 160px; /* samme højde som før */
+  object-fit: cover; /* beskærer billedet pænt */
+  display: block;
+}

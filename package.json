@@ -2,6 +2,8 @@
   "name": "ycdk",
   "type": "module",
   "version": "0.0.1",
+  "description": "```sh npm create astro@latest -- --template basics ```",
+  "main": "index.js",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -12,5 +14,16 @@
     "@supabase/ssr": "^0.10.2",
     "@supabase/supabase-js": "^2.104.0",
     "astro": "^5.17.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikkiatlaa/uge44.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikkiatlaa/uge44/issues"
+  },
+  "homepage": "https://github.com/mikkiatlaa/uge44#readme"
 }
