@@ -4,40 +4,12 @@ import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/index.css';
-import CtaButton from '../components/CtaButton.astro';
-import Monogram from '../components/monogram.astro';
-
+import Indexsection from '../components/indexsection.astro';
 ---
 
 <Layout>
   <Header />
   <Hero tagline="UGE 44 FOKUS PÅ DØDEN" title="Forside" />
-  <section class="index1_1-1">
-    <div class="index1_box_1">
-      <h1>Om Uge 44</h1>
-      <p>Hvert år sætter Landsforeningen Liv&Død landsdækkende fokus på døden i uge 44 gennem indsatser, der går på tværs af kultur, sundhed og læring. Og du kan blive en del af kampagnen!</p>
-     <CtaButton href='/uge44' label="Læs mere" />
-    </div>
-    <div class="index1_box_2">
-      <h1>Vores Nyhedsbrev</h1>
-      <p>Tilmed dig vores nyhedsbrev og modtag nyheder og information om vores arbejde om vores arbejde for at nedbryde tabuet om døden!</p>
-      <CtaButton href='/nyhedsbrev' label='Tilmelding'/>
-    </div>
-  </section>
-
-<img class="monogram" src="../../public/uge44monogram.webp.webp" alt="orange logo monogram">
-
-  <section class="index2_1-1">
-    <div class="index2_box_1">
-      <h1>Vores Kalender</h1>
-      <p>I vores kalender finder du informationer om vores aktuelle udstillinger og arrangementer. Under det enkelte arrangement kan du også tilmelde dig.</p>
-      <CtaButton href='/kalender' label="Kalender" />
-    </div>
-    <div class="index2_box_2">
-      <h1>Næste Arrangement</h1>
-      <!--button--> 
-    </div>
-
-  </section>
+  <Indexsection />
   <Footer />
 </Layout>
